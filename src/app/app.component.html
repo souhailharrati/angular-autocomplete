@@ -1,0 +1,7 @@
+<p>Type any value (e.g. "FR"), then tab before suggestions are displayed. The value in autocomplete field is not erased. If you wait until suggestions are displayed, the value is erased. </p>
+
+<form #f="ngForm" novalidate>
+    <p-autoComplete name="test" [(ngModel)]="country" [suggestions]="filteredCountriesSingle" (completeMethod)="filterCountrySingle($event)" field="name" [size]="30" 
+    placeholder="Countries" [minLength]="1"></p-autoComplete>
+    <span style="margin-left:10px">Country: {{country ? country.name||country : 'none'}}</span>
+</form>
